@@ -14,26 +14,35 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+        <!-- custom css -->
     <style>
         .raleway {
             font-family: "Raleway", sans-serif;
         }
-        .inter{
+
+        .inter {
             font-family: "Inter", sans-serif;
+        }
+        .pColor{
+            color:#1DD100;
         }
     </style>
 </head>
 
 <body>
-    <header>
-        <nav class="raleway">
-            <h1>KG-Ticket</h1>
-            <ul>
+    <header class="mt-8">
+        <nav class="raleway flex items-center justify-between container w-4/5 mx-auto">
+            <h1 class="text-4xl font-extrabold">KG-Ticket</h1>
+            <ul class="hidden  items-center justify-center gap-14 font-medium sm:flex">
                 <li>Home</li>
                 <li>About </li>
                 <li>Destination</li>
                 <li>Search</li>
             </ul>
+            <button class="btn pColor font-bold bg-[#1DD10019] border border-[#1DD10066]">
+                Bus
+                <img src="images/bus-icon.png" alt="">
+            </button>
         </nav>
     </header>
     <main></main>

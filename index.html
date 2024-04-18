@@ -57,7 +57,8 @@
                             hassle-free!
                             Discover convenient routes, reliable service, and unbeatable prices.
                             Explore our wide selection of destinations and plan your next journey today.</p>
-                        <button class="btn bg-[#1DD100] border-none text-xl font-bold px-6 py-3">Buy Tickets</button>
+                        <button onclick="chooseSeat()"
+                            class="btn bg-[#1DD100] border-none text-xl font-bold px-6 py-3">Buy Tickets</button>
                     </div>
                 </div>
             </div>
@@ -95,11 +96,12 @@
             <button class="btn pColor border border-[#1DD10066]">See All Offers</button>
         </section>
         <!-- select ticket  -->
-        <section class="border-t-2 bg-[#F7F8F8] border-[rgb(29,209,0)] rounded-t-[88px] mt-8">
+        <section id="chooseSeat" class="border-t-2 bg-[#F7F8F8] border-[rgb(29,209,0)] rounded-t-[88px] mt-8">
             <div class="container mx-auto w-4/5 mt-10 text-center">
                 <h1 class="text-4xl font-bold">K.H Paribahan</h1>
                 <p>Secure Your Seat, Hassle-Free Booking!</p>
-                <p class="inter">Reserve your tickets effortlessly and embark on your journey stress-free. With our user-friendly
+                <p class="inter">Reserve your tickets effortlessly and embark on your journey stress-free. With our
+                    user-friendly
                     interface, you can easily search for available routes, select your preferred seats, and complete
                     your booking in just a few clicks.</p>
             </div>
@@ -116,7 +118,7 @@
                         </div>
                         <div class="flex items-center justify-center lg:p-4 rounded-xl gap-4 bg-[#1DD10026]">
                             <img src="images/seat-green.png" alt="">
-                            <p class="pColor"><span>40</span> Seats left</p>
+                            <p class="pColor"><span id="reamingSeat">40</span> Seats left</p>
                         </div>
                     </div>
                     <div class="p-4 bg-[#F7F8F8]">
@@ -148,121 +150,137 @@
             </div>
 
             <!-- select your ticket  -->
-            <div class="mt-8 w-3/4 mx-auto bg-white lg:p-8 flex lg:gap-9">
+            <div class="flex items-center justify-center gap-4 mt-8 w-3/4 mx-auto bg-white lg:p-8 lg:gap-9">
+                <!-- left part -->
                 <div class="flex-1">
-                    <h1 class="text-2xl font-semibold mb-4">Select Your Seat</h1>
-                    <hr class="border-t-2 border-dashed mb-4">
-                    <div class="flex items-center justify-between mb-4">
-                        <div class="flex items-center justify-center gap-4">
-                            <img src="images/seat-gray.png" alt="">
-                            <p>Available</p>
-                        </div>
-                        <div class="flex items-center justify-center gap-4">
-                            <img src="images/seat-green-filled.png" alt="">
-                            <p class="pColor">Selected</p>
-                        </div>
-                    </div>
-                    <hr class="border-t-2 border-dashed ">
-                    <div class="flex justify-end lg:mt-4">
-                        <div class="bg-[#0307120C] lg:p-4 w-1/3 flex items-center justify-center">
-                            <img src="images/tabler-icon-steering-wheel.png" alt="">
-                        </div>
-                    </div>
-                    <!-- but seat -->
-                    <div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>A</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="A1" class="lg:p-4 lg:px-6  bg-[#0307120C]">A1</h1>
-                                <h1 id="A2" class="lg:p-4 lg:px-6 bg-[#0307120C]">A2</h1>
-                                <h1 id="A3" class="lg:p-4 lg:px-6 bg-[#0307120C]">A3</h1>
-                                <h1 id="A4" class="lg:p-4 lg:px-6 bg-[#0307120C]">A4</h1>
+                    <div class="">
+                        <h1 class="text-2xl font-semibold mb-4">Select Your Seat</h1>
+                        <hr class="border-t-2 border-dashed mb-4">
+                        <div class="flex items-center justify-between mb-4">
+                            <div class="flex items-center justify-center gap-4">
+                                <img src="images/seat-gray.png" alt="">
+                                <p>Available</p>
+                            </div>
+                            <div class="flex items-center justify-center gap-4">
+                                <img src="images/seat-green-filled.png" alt="">
+                                <p class="pColor">Selected</p>
                             </div>
                         </div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>B</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="B1" class="lg:p-4 lg:px-6 bg-[#0307120C]">B1</h1>
-                                <h1 id="B2" class="lg:p-4 lg:px-6 bg-[#0307120C]">B2</h1>
-                                <h1 id="B3" class="lg:p-4 lg:px-6 bg-[#0307120C]">B3</h1>
-                                <h1 id="B4" class="lg:p-4 lg:px-6 bg-[#0307120C]">B4</h1>
+                        <hr class="border-t-2 border-dashed ">
+                        <div class="flex justify-end lg:mt-4">
+                            <div class="bg-[#0307120C] lg:p-4 w-1/3 flex items-center justify-center">
+                                <img src="images/tabler-icon-steering-wheel.png" alt="">
                             </div>
                         </div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>C</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="C1" class="lg:p-4 lg:px-6 bg-[#0307120C]">C1</h1>
-                                <h1 id="C2" class="lg:p-4 lg:px-6 bg-[#0307120C]">C2</h1>
-                                <h1 id="C3" class="lg:p-4 lg:px-6 bg-[#0307120C]">C3</h1>
-                                <h1 id="C4" class="lg:p-4 lg:px-6 bg-[#0307120C]">C4</h1>
+                        <!-- but seat -->
+                        <div class="flex lg:gap-10 items-center ">
+                            <div class="flex flex-col gap-14 items-center ">
+                                <h1>A</h1>
+                                <h1>B</h1>
+                                <h1>C</h1>
+                                <h1>D</h1>
+                                <h1>E</h1>
+                                <h1>F</h1>
+                                <h1>G</h1>
+                                <h1>H</h1>
+                                <h1>I</h1>
+                                <h1>J</h1>
                             </div>
-                        </div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>D</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="D1" class="lg:p-4 lg:px-6 bg-[#0307120C]">D1</h1>
-                                <h1 id="D2" class="lg:p-4 lg:px-6 bg-[#0307120C]">D2</h1>
-                                <h1 id="D3" class="lg:p-4 lg:px-6 bg-[#0307120C]">D3</h1>
-                                <h1 id="D4" class="lg:p-4 lg:px-6 bg-[#0307120C]">D4</h1>
-                            </div>
-                        </div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>E</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="E1" class="lg:p-4 lg:px-6 bg-[#0307120C]">E1</h1>
-                                <h1 id="E2" class="lg:p-4 lg:px-6 bg-[#0307120C]">E2</h1>
-                                <h1 id="E3" class="lg:p-4 lg:px-6 bg-[#0307120C]">E3</h1>
-                                <h1 id="E4" class="lg:p-4 lg:px-6 bg-[#0307120C]">E4</h1>
-                            </div>
-                        </div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>F</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="F1" class="lg:p-4 lg:px-6 bg-[#0307120C]">F1</h1>
-                                <h1 id="F2" class="lg:p-4 lg:px-6 bg-[#0307120C]">F2</h1>
-                                <h1 id="F3" class="lg:p-4 lg:px-6 bg-[#0307120C]">F3</h1>
-                                <h1 id="F4" class="lg:p-4 lg:px-6 bg-[#0307120C]">F4</h1>
-                            </div>
-                        </div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>G</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="G1" class="lg:p-4 lg:px-6 bg-[#0307120C]">G1</h1>
-                                <h1 id="G2" class="lg:p-4 lg:px-6 bg-[#0307120C]">G2</h1>
-                                <h1 id="G3" class="lg:p-4 lg:px-6 bg-[#0307120C]">G3</h1>
-                                <h1 id="G4" class="lg:p-4 lg:px-6 bg-[#0307120C]">G4</h1>
-                            </div>
-                        </div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>H</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="H1" class="lg:p-4 lg:px-6 bg-[#0307120C]">H1</h1>
-                                <h1 id="H2" class="lg:p-4 lg:px-6 bg-[#0307120C]">H2</h1>
-                                <h1 id="H3" class="lg:p-4 lg:px-6 bg-[#0307120C]">H3</h1>
-                                <h1 id="H4" class="lg:p-4 lg:px-6 bg-[#0307120C]">H4</h1>
-                            </div>
-                        </div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>I</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="I1" class="lg:p-4 lg:px-6 bg-[#0307120C]">I1</h1>
-                                <h1 id="I2" class="lg:p-4 lg:px-6 bg-[#0307120C]">I2</h1>
-                                <h1 id="I3" class="lg:p-4 lg:px-6 bg-[#0307120C]">I3</h1>
-                                <h1 id="I4" class="lg:p-4 lg:px-6 bg-[#0307120C]">I4</h1>
-                            </div>
-                        </div>
-                        <div class="flex items-center lg:gap-8 mt-6 justify-center">
-                            <h1>J</h1>
-                            <div class="grid grid-cols-4 lg:gap-8">
-                                <h1 id="J1" class="lg:p-4 lg:px-6 bg-[#0307120C]">J1</h1>
-                                <h1 id="J2" class="lg:p-4 lg:px-6 bg-[#0307120C]">J2</h1>
-                                <h1 id="J3" class="lg:p-4 lg:px-6 bg-[#0307120C]">J3</h1>
-                                <h1 id="J4" class="lg:p-4 lg:px-6 bg-[#0307120C]">J4</h1>
-                            </div>
-                        </div>
-                    </div>
+                            <div id="seat">
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="A1" class="lg:p-4 lg:px-6 bg-[#0307120C]">A1</h1>
+                                        <h1 id="A2" class="lg:p-4 lg:px-6 bg-[#0307120C]">A2</h1>
+                                        <h1 id="A3" class="lg:p-4 lg:px-6 bg-[#0307120C]">A3</h1>
+                                        <h1 id="A4" class="lg:p-4 lg:px-6 bg-[#0307120C]">A4</h1>
+                                    </div>
+                                </div>
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
 
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="B1" class="lg:p-4 lg:px-6 bg-[#0307120C]">B1</h1>
+                                        <h1 id="B2" class="lg:p-4 lg:px-6 bg-[#0307120C]">B2</h1>
+                                        <h1 id="B3" class="lg:p-4 lg:px-6 bg-[#0307120C]">B3</h1>
+                                        <h1 id="B4" class="lg:p-4 lg:px-6 bg-[#0307120C]">B4</h1>
+                                    </div>
+                                </div>
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
+
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="C1" class="lg:p-4 lg:px-6 bg-[#0307120C]">C1</h1>
+                                        <h1 id="C2" class="lg:p-4 lg:px-6 bg-[#0307120C]">C2</h1>
+                                        <h1 id="C3" class="lg:p-4 lg:px-6 bg-[#0307120C]">C3</h1>
+                                        <h1 id="C4" class="lg:p-4 lg:px-6 bg-[#0307120C]">C4</h1>
+                                    </div>
+                                </div>
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
+
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="D1" class="lg:p-4 lg:px-6 bg-[#0307120C]">D1</h1>
+                                        <h1 id="D2" class="lg:p-4 lg:px-6 bg-[#0307120C]">D2</h1>
+                                        <h1 id="D3" class="lg:p-4 lg:px-6 bg-[#0307120C]">D3</h1>
+                                        <h1 id="D4" class="lg:p-4 lg:px-6 bg-[#0307120C]">D4</h1>
+                                    </div>
+                                </div>
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
+
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="E1" class="lg:p-4 lg:px-6 bg-[#0307120C]">E1</h1>
+                                        <h1 id="E2" class="lg:p-4 lg:px-6 bg-[#0307120C]">E2</h1>
+                                        <h1 id="E3" class="lg:p-4 lg:px-6 bg-[#0307120C]">E3</h1>
+                                        <h1 id="E4" class="lg:p-4 lg:px-6 bg-[#0307120C]">E4</h1>
+                                    </div>
+                                </div>
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
+
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="F1" class="lg:p-4 lg:px-6 bg-[#0307120C]">F1</h1>
+                                        <h1 id="F2" class="lg:p-4 lg:px-6 bg-[#0307120C]">F2</h1>
+                                        <h1 id="F3" class="lg:p-4 lg:px-6 bg-[#0307120C]">F3</h1>
+                                        <h1 id="F4" class="lg:p-4 lg:px-6 bg-[#0307120C]">F4</h1>
+                                    </div>
+                                </div>
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
+
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="G1" class="lg:p-4 lg:px-6 bg-[#0307120C]">G1</h1>
+                                        <h1 id="G2" class="lg:p-4 lg:px-6 bg-[#0307120C]">G2</h1>
+                                        <h1 id="G3" class="lg:p-4 lg:px-6 bg-[#0307120C]">G3</h1>
+                                        <h1 id="G4" class="lg:p-4 lg:px-6 bg-[#0307120C]">G4</h1>
+                                    </div>
+                                </div>
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
+
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="H1" class="lg:p-4 lg:px-6 bg-[#0307120C]">H1</h1>
+                                        <h1 id="H2" class="lg:p-4 lg:px-6 bg-[#0307120C]">H2</h1>
+                                        <h1 id="H3" class="lg:p-4 lg:px-6 bg-[#0307120C]">H3</h1>
+                                        <h1 id="H4" class="lg:p-4 lg:px-6 bg-[#0307120C]">H4</h1>
+                                    </div>
+                                </div>
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
+
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="I1" class="lg:p-4 lg:px-6 bg-[#0307120C]">I1</h1>
+                                        <h1 id="I2" class="lg:p-4 lg:px-6 bg-[#0307120C]">I2</h1>
+                                        <h1 id="I3" class="lg:p-4 lg:px-6 bg-[#0307120C]">I3</h1>
+                                        <h1 id="I4" class="lg:p-4 lg:px-6 bg-[#0307120C]">I4</h1>
+                                    </div>
+                                </div>
+                                <div class="flex items-center lg:gap-8 mt-6 justify-center">
+
+                                    <div class="grid grid-cols-4 lg:gap-8 seat">
+                                        <h1 id="J1" class="lg:p-4 lg:px-6 bg-[#0307120C]">J1</h1>
+                                        <h1 id="J2" class="lg:p-4 lg:px-6 bg-[#0307120C]">J2</h1>
+                                        <h1 id="J3" class="lg:p-4 lg:px-6 bg-[#0307120C]">J3</h1>
+                                        <h1 id="J4" class="lg:p-4 lg:px-6 bg-[#0307120C]">J4</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <!-- border -->
                 <div class="border-r-2 border-dashed "></div>
                 <!-- right part -->
                 <div class="flex-1">
@@ -271,28 +289,32 @@
                     <!-- calculation part -->
                     <div class="lg:p-4 bg-[#F7F8F8] lg:mt-8 lg:space-y-8">
                         <div class="flex justify-between">
-                            <p class="text-xl font-semibold">Seat <span>0</span></p>
+                            <p class="text-xl font-semibold">Seat <span id="totalSeat"
+                                    class="bg-[#1DD100] px-2 rounded text-white">0</span></p>
                             <p class="text-xl font-semibold">Class</p>
                             <p class="text-xl font-semibold">Price</p>
                         </div>
                         <hr class="border-t-2 border-dashed ">
-                        <div>
-                            <ul>
-                                <li></li>
+                        <div class="flex ">
+                            <ul id="seatName" class="space-y-4">
+
                             </ul>
                         </div>
                         <hr class="border-t-2 border-solid ">
                         <div class="flex justify-between items-center">
                             <h1 class="text-xl font-semibold">Total Price</h1>
-                            <p class="text-xl font-semibold">BDT <span></span></p>
+                            <p class="text-xl font-semibold">BDT <span id="totalPrice">0</span></p>
                         </div>
                         <div class="relative">
-                            <input type="text" class="border border-gray-300 rounded-md py-2 px-4 block w-full focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500" placeholder="Have any copupon?">
-                            <button type="button" class="absolute inset-y-0 right-0 px-4 py-2 bg-[#1DD100] text-gray-700 hover:bg-gray-300 focus:outline-none focus:bg-gray-300">Button</button>
+                            <input type="text"
+                                class="border border-gray-300 rounded-md py-2 px-4 block w-full focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500"
+                                placeholder="Have any copupon?">
+                            <button type="button"
+                                class="absolute inset-y-0 right-0 px-4 py-2 bg-[#1DD100] text-gray-700 hover:bg-gray-300 focus:outline-none focus:bg-gray-300">Button</button>
                         </div>
                         <div class="flex justify-between items-center">
                             <h1 class="text-xl font-semibold">Grand Total</h1>
-                            <p class="text-xl font-semibold">BDT <span>0</span></p>
+                            <p class="text-xl font-semibold">BDT <span id="grandTotal">0</span></p>
                         </div>
                         <div>
                             <h1 class="text-xl font-semibold">Passenger Name*</h1>
@@ -300,13 +322,28 @@
                         </div>
                         <div>
                             <h1 class="text-xl font-semibold">Phone Number*</h1>
-                            <input class="w-full p-4" placeholder="Enter your phone number" type="number" name="" id="">
+                            <input class="w-full p-4" placeholder="Enter your phone number" type="number" name="" id="phoneNum">
                         </div>
                         <div>
                             <h1 class="text-xl font-semibold">Email ID</h1>
                             <input class="w-full p-4" placeholder="Enter your email id" type="number" name="" id="">
                         </div>
-                        <button class="btn bg-[#1DD100] w-full text-white">Next</button>
+                        <button id="modalBtn" class="btn bg-[#1DD100] w-full text-white" disabled onclick="my_modal_5.showModal() ">Next</button>
+                        <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                            <div class="modal-box">
+                                <h3 class="font-bold text-lg">Hello!</h3>
+                                <p class="py-4">Press ESC key or click the button below to close</p>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
+
+
+
                         <div class="flex items-center justify-center gap-8">
                             <u>Terms and Conditions</u>
                             <u>Cancellation Policy</u>
@@ -316,7 +353,7 @@
             </div>
         </section>
     </main>
-    <footer class="bg-[#030712] lg:p-52 text-white"> 
+    <footer class="bg-[#030712] lg:p-52 text-white">
         <div class="flex justify-between mb-12">
             <div>
                 <h1 class="text-4xl font-extrabold mb-4">K-Ticket</h1>
@@ -334,14 +371,14 @@
             </div>
         </div>
         <hr class="border-t-2 border-dashed ">
-            <div class="mt-8 flex items-center justify-between inter">
-                <p>@all rights reserved, P-Ticket services limited.2024</p>
-                <div class="flex gap-4 font-medium">
-                    <p class="">Terms & condition</p>
-                    <p>Return & refund policy</p>
-                    <p>Privacy policy</p>
-                </div>
+        <div class="mt-8 flex items-center justify-between inter">
+            <p>@all rights reserved, P-Ticket services limited.2024</p>
+            <div class="flex gap-4 font-medium">
+                <p class="">Terms & condition</p>
+                <p>Return & refund policy</p>
+                <p>Privacy policy</p>
             </div>
+        </div>
     </footer>
     <!-- js file -->
     <script src="scripts/utility.js"></script>

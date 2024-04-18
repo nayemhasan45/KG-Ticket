@@ -43,6 +43,11 @@ function checkColor(element) {
         const grandTotal = catchElementById('grandTotal');
         grandTotal.innerText = parseInt(totalSeat * 550);
 
+        // cuppon
+        if(totalSeat===4){
+            document.getElementById('couponBtn').removeAttribute('disabled');
+        }
+
         catchElementById('reamingSeat').innerText = seatRemaining;
         catchElementById('totalSeat').innerText = totalSeat;
     }
